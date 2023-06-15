@@ -20,11 +20,10 @@ class TodosService {
     }
   }
 
-  public async find(query: FindOptions): Promise<TodoType> {
+  public async find(query: FindOptions): Promise<Todo | null> {
     try {
       const todo: Todo | null = await Todo.findOne(query);
-      if (todo) return todo;
-      else throw new Error("Todo not found");
+      return todo ?? null;
     } catch (err: any) {
       throw new Error(err.message);
     }
@@ -55,7 +54,7 @@ class TodosService {
 
   public async delete(query: FindOptions): Promise<any> {
     try {
-      await Todo.destroy(query);
+      return await Todo.destroy(query);
     } catch (err: any) {
       throw new Error(err.message);
     }

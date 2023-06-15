@@ -66,6 +66,10 @@ class App {
     await this.app.use(notFound);
     await this.app.use(errorHandler);
   }
+
+  public getServer() {
+    return this.app;
+  }
 }
 
 export default App;

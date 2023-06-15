@@ -9,7 +9,6 @@ const sendError = (
   message: string | null,
   statusCode = 500
 ): void => {
-  console.log("omarrrrrrrr");
   res.status(statusCode).json({ success: false, error: message });
 };
 export { sendSuccess, sendError };

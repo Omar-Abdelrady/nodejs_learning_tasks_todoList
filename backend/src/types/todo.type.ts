@@ -1,7 +1,7 @@
 export type TodoType = {
-  id: number;
+  id?: number;
   title: string;
   description: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 };

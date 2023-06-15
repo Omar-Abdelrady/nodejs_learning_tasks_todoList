@@ -25,11 +25,7 @@ class Todo extends Model {
         },
         description: {
           type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-            notEmpty: true,
-            notNull: true,
-          },
+          allowNull: true,
         },
       },
       {
